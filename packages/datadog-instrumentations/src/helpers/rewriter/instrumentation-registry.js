@@ -51,6 +51,7 @@ const registry = [
     activate: { setup: () => require('../../typesafe') },
     instrumentations: require('./instrumentations/typesafe'),
   },
+  { activate: true, instrumentations: require('./instrumentations/trpc') },
 ]
 
 const activatedModules = new Set()

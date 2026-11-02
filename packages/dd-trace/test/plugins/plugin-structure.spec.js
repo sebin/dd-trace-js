@@ -56,6 +56,7 @@ const missingInstrumentationHooks = [
   'langgraph',
   'postgres',
   'supabase',
+  'trpc',
   'typesafe',
 ]
 
@@ -66,6 +67,7 @@ const hooklessOrchestrionPlugins = new Set([
   'langgraph',
   'postgres',
   'supabase',
+  'trpc',
   'typesafe',
 ])
 
@@ -208,6 +210,7 @@ describe('Plugin Structure Validation', () => {
       '@supabase/postgrest-js',
       '@supabase/realtime-js',
       '@supabase/storage-js',
+      '@trpc/server',
       'bullmq',
       'mercurius',
       'postgres',

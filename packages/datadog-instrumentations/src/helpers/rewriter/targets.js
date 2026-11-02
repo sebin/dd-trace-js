@@ -9,7 +9,8 @@ for (const [name, sources] of Object.entries(patternSources)) {
   const packagePatterns = patterns[name] = []
   for (const source of sources) packagePatterns.push(new RegExp(source))
 }
-const rewriteTargetNames = new Set([...Object.values(targets), ...Object.keys(patterns)])
+const rewriteTargetNames = new Set(Object.values(targets))
+for (const name of Object.keys(patterns)) rewriteTargetNames.add(name)
 
 const NODE_MODULES = '/node_modules/'
 

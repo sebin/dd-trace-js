@@ -31,12 +31,12 @@ module.exports = function getExporter (name) {
       return require('./ci-visibility/exporters/test-worker')
   }
 
-  const inAWSLambda = getEnvironmentVariable('AWS_LAMBDA_FUNCTION_NAME') !== undefined
-  const usingAgent = inAWSLambda && (
+  const { IS_AWS_LAMBDA } = require('./serverless')
+  const usingAgent = IS_AWS_LAMBDA && (
     fs.existsSync(constants.DATADOG_LAMBDA_EXTENSION_PATH) ||
     fs.existsSync(constants.DATADOG_MINI_AGENT_PATH)
   )
-  return inAWSLambda && !usingAgent ? require('./exporters/log') : require('./exporters/agent')
+  return IS_AWS_LAMBDA && !usingAgent ? require('./exporters/log') : require('./exporters/agent')
 }
 
 function hasCiValidationEnvironment () {

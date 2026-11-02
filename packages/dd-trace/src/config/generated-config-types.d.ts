@@ -400,6 +400,7 @@ export interface GeneratedConfig {
   DD_TRACE_SUPABASE_ENABLED: boolean;
   DD_TRACE_TAGS: Record<string, string> | undefined;
   DD_TRACE_TEDIOUS_ENABLED: boolean;
+  DD_TRACE_TRPC_ENABLED: boolean;
   DD_TRACE_TYPESAFE_ENABLED: boolean;
   DD_TRACE_UNDICI_ENABLED: boolean;
   DD_TRACE_URL_ENABLED: boolean;
@@ -1135,6 +1136,7 @@ export interface GeneratedEnvVarConfig {
   DD_TRACE_TAGS: Record<string, string> | undefined;
   DD_TRACE_TEDIOUS_ENABLED: boolean;
   DD_TRACE_TELEMETRY_ENABLED: boolean;
+  DD_TRACE_TRPC_ENABLED: boolean;
   DD_TRACE_TYPESAFE_ENABLED: boolean;
   DD_TRACE_UNDICI_ENABLED: boolean;
   DD_TRACE_URL: string | URL;
